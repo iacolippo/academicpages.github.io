@@ -9,13 +9,87 @@ tags:
   - cuda
 ---
 
-What is this blog post about.
+If you can't get your code in your favorite DL framework to run on GPUs on Azure, you're
+in the right place. What follows is the extensive guide you're looking for, result of 
+direct experience and pain.
+
+In the following we assume the install is for an **Ubuntu Server 16.04 LTS** virtual 
+machine with a graphic card (e.g. NV6, NV12, NC6, NC12). It's pretty straightforward that
+you can't run code on a GPU, if you don't have it =)
+
+You can check that you have available NVIDIA hardware by entering in the terminal:
+
+`lspci | grep -i nvidia`
+
+The output should be something like:
+
+(example from NV6)
 
 CUDA INSTALL
 ======
 
+Download and scp the installation package
+------
+
+Download CUDA 8.0 deb package for your system frome [here](https://developer.nvidia.com/cuda-downloads).
+
+You have to select:
+- operating system
+- architecture
+- distribution
+- version
+- installer type
+
+The correct choices are:
+- OS: Linux
+- architecture: x86_64 (you can check it by entering `uname -m` in the terminal)
+- distribution: Ubuntu
+- version: 16.04
+
+For the **installer type**, I recommend **deb(network)**. It's fast to download and fast 
+to scp to the remote machine. The *deb(local)* version is 1.8GB, vs 2.6K of the network one.
+
+Now you can transfer this file from your local machine to the remote machine. Navigate
+to the directory where the file is (using `cd`).
+The Azure portal gives you an SSH command to connect to the machine, which is something like:
+
+`ssh [username]@[ipaddress]`
+
+Take the second part, append `:/home/lighton/` and enter in the terminal:
+
+`scp cuda-repo-ubuntu1604_8.0.61-1_amd64.deb [username]@[ipaddress]:/home/[username]/`
+
+Where `[username]` and `[ipaddress]` are YOUR USERNAME and YOUR IP ADDRESS. You will now 
+find your file in the home directory of the remote machine.
+
+Install
+------
+
+1. First, to build CUDA you need **gcc**, which is not installed by default, so:
+
+`sudo apt install gcc`
+
+2. Just to be sure we have the correct kernel headers:
+
+`sudo apt-get install linux-headers-$(uname -r)`
+
+This passage is sometimes needed, sometimes useless. Misteries of computer science.
+
+3. Install the package
+
+```bash
+sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
+sudo apt-get update
+sudo apt-get install cuda
+```
+
 CUDNN INSTALL
 ======
+
+Download CUDNN 5.1 for CUDA 8.0 Linux from [here](). You may have to subscribe and wait to 
+get accepted, but it's usually a quite fast process. Once logged in you have to agree to 
+the cuDNN Software License Agreement. Now you can download **cuDNN v5.1 Library for Linux**
+(update for cuDNN v6.0 coming soon...). It's a tar file of around 147MB.
 
 WHICH DL FRAMEWORK DO YOU WANT TO INSTALL?
 ======
