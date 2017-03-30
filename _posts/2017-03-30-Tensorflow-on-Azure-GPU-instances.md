@@ -287,9 +287,9 @@ allocator). The value represents the start size (either in MB or the fraction of
 memory) of the memory pool. If more memory is needed, Theano will try to obtain more, but 
 this can cause memory fragmentation. 
 
-- 0: not enabled.
-- 0 < N <= 1: use this fraction of the total GPU memory (clipped to .95 for driver memory).
-- > 1: use this number in megabytes (MB) of memory.
+- $0$: not enabled.
+- $0 < N <= 1$: use this fraction of the total GPU memory (clipped to .95 for driver memory).
+- $N > 1$: use this number in megabytes (MB) of memory.
 
 <span id="keras">KERAS INSTALL AND CHECK</span>
 ------
