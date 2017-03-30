@@ -82,6 +82,35 @@ sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
 sudo apt-get update
 sudo apt-get install cuda
 ```
+4. Add `/usr/local/cuda-8.0/bin` to `PATH` environment variable in `.profile` in home 
+directory using `nano` or `vim`:
+
+`nano .profile`
+
+Append `:/usr/local/cuda-8.0/bin` to the content of the path variable, like from
+
+`PATH="$HOME/bin:$HOME/.local/bin:$PATH"`
+
+to
+
+`PATH="$HOME/bin:$HOME/.local/bin:$PATH:/usr/local/cuda-8.0/bin"`
+
+5. Add `/usr/local/cuda-8.0/lib64` to `LD_LIBRARY_PATH` variable in `.profile`. If such 
+variable doesn't exist, create it.
+
+`LD_LIBRARY_PATH="/usr/local/cuda-8.0/lib64"`
+
+To save in `nano`: Ctrl+X, Y, Enter.
+
+6. Activate the changes using:
+
+`source .profile`
+
+7. To make them effective, reboot the machine:
+
+`sudo reboot`
+
+**Greetings dear reader, you have installed CUDA!**
 
 CUDNN INSTALL
 ======
