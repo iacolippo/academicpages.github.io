@@ -210,8 +210,86 @@ session with option `log_device_placement=True`:
 <span id="torch">TORCH INSTALL AND CHECK</span>
 ------
 
+1. Clone the torch repository
+
+    `git clone https://github.com/torch/distro.git ~/torch --recursive`
+    
+2. Install dependencies, you may need to run the second line with the prefix `sudo -s`:
+
+    ```bash
+    cd ~/torch; 
+    bash install-deps;
+    ```
+    
+    or
+    
+    ```bash
+    cd ~/torch; 
+    sudo -s bash install-deps;
+    ```
+3. Install:
+
+    `./install.sh`
+    
+4. Activate the installation:
+
+    `source ~/.bashrc`
+    
+5. Install the Luarocks package manager for LUA:
+
+    `sudo apt install luarocks`
+    
+You can now install whatever package you want with
+
+`luarocks install <package-name>`
+
+or
+
+`luarocks install <package-link>`
+
+To run your model on GPU, you can write your model as usual and call the method `cuda()` on
+it. To do this, you have to `require cudnn`.
+
+    ```LUA
+    require 'cudnn'
+    require 'nn'
+    
+    local model = definition...
+    ...
+    return model
+    
+    model:cuda()
+    ```
+
 <span id="theano">THEANO INSTALL AND CHECK</span>
 ------
+
+1. Install `theano`
+
+    `sudo pip install theano`
+    
+2. Create `.theanorc` file using `nano` or whatever, with this content:
+
+    ```
+    [cuda]
+    root = /usr/local/cuda-8.0/
+    
+    [global]
+    device = gpu0
+    floatX = float32
+    
+    [lib]
+    cnmem=.75
+    ```
+    
+The parameter `cnmem` can be modified. It controls the use of CNMeM (a faster CUDA memory 
+allocator). The value represents the start size (either in MB or the fraction of total GPU 
+memory) of the memory pool. If more memory is needed, Theano will try to obtain more, but 
+this can cause memory fragmentation. 
+
+- 0: not enabled.
+- 0 < N <= 1: use this fraction of the total GPU memory (clipped to .95 for driver memory).
+- > 1: use this number in megabytes (MB) of memory.
 
 <span id="keras">KERAS INSTALL AND CHECK</span>
 ------
@@ -229,4 +307,4 @@ instructions</a>.
 
 
 #### Footnote
-This post is adapted from my [github repository](https://github.com/iacolippo/gpu-dnn-install)
+This post is adapted from my [github repository](https://github.com/iacolippo/gpu-dnn-install).
