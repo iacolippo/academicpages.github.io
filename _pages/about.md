@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-<img src="files/nn-vs-stats.jpg"/>
+<div style="text-align: right"> 30/03/2017 </div>
 
 Welcome to my blog! If you like deep learning and computer science, you'll like it here.
 I'm going to write posts about my research, my projects and things I try in my free time, 
@@ -45,3 +45,5 @@ with me on Linkedin or to see my Q&A on Stackoverflow!
 Hope you'll have a good time here!
 
 <div style="text-align: right"> Iacopo </div>
+
+<p align="center"><img src="files/nn-vs-stats.jpg", alt="deep learning joke"/></p>
