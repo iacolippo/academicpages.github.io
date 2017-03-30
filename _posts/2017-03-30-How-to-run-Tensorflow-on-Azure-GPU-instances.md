@@ -1,7 +1,7 @@
 ---
 title: 'How to run Tensorflow on Azure GPU instances'
 date: 2017-03-30
-permalink: /posts/2017/03/tensorflow-gpu-azure/
+permalink: /posts/2017/03/How-to-run-Tensorflow-on-Azure-GPU-instances/
 tags:
   - tensorflow
   - azure
