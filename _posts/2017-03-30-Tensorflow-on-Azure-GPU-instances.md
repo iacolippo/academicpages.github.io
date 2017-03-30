@@ -28,6 +28,9 @@ The output should be something like:
 CUDA INSTALL
 ======
 
+NVIDIA® CUDA® Toolkit is *a comprehensive development environment for C and C++ 
+developers building GPU-accelerated applications*.
+
 Download and scp the installation package
 ------
 
@@ -51,6 +54,10 @@ to scp to the remote machine. The *deb(local)* version is 1.8GB, vs 2.6K of the 
 
 Now you can transfer this file from your local machine to the remote machine. Navigate
 to the directory where the file is (using `cd`).
+To transfer files to the remote, we will use `scp`, a command which works like this:
+
+`scp <local-path-to-the-file-to-transfer> <remote-machine-address>`
+
 The Azure portal gives you an SSH command to connect to the machine, which is something like:
 
 `ssh [username]@[ipaddress]`
@@ -60,7 +67,10 @@ Take the second part, append `:/home/lighton/` and enter in the terminal:
 `scp cuda-repo-ubuntu1604_8.0.61-1_amd64.deb [username]@[ipaddress]:/home/[username]/`
 
 Where `[username]` and `[ipaddress]` are YOUR USERNAME and YOUR IP ADDRESS. You will now 
-find your file in the home directory of the remote machine.
+find your file in the home directory of the remote machine. You're ready to ssh into your
+remote machine and start with the install:
+
+`ssh [username]@[ipaddress]`
 
 Install
 ------
@@ -115,10 +125,43 @@ variable doesn't exist, create it.
 CUDNN INSTALL
 ======
 
+NVIDIA cuDNN is  *a GPU-accelerated library of primitives for deep neural networks*.
+
+Download and scp the installation package
+------
+
 Download CUDNN 5.1 for CUDA 8.0 Linux from [here](). You may have to subscribe and wait to 
 get accepted, but it's usually a quite fast process. Once logged in you have to agree to 
 the cuDNN Software License Agreement. Now you can download **cuDNN v5.1 Library for Linux**
 (update for cuDNN v6.0 coming soon...). It's a tar file of around 147MB.
+
+As for CUDA, transfer the tar file to the remote machine:
+
+`scp cudnn-8.0-linux-x64-v5.1.tar [username]@[ipaddress]:/home/[username]/` 
+
+Reconnect via SSH, we're going to install! 
+
+Install
+------
+
+1. extract the files from the tarball and enter in the cuda directory
+
+    ```bash
+    tar -xvf cudnn-8.0-linux-x64-v5.1.tar
+    cd cuda
+    ```
+    
+2. create symbolic links
+
+    ```bash
+    sudo cp -P include/cudnn.h /usr/include/
+    sudo cp -P lib64/libcudnn* /usr/lib/x86_64-linux-gnu/
+    ```
+    
+3. set permissions
+
+    `sudo chmod a+r /usr/lib/x86_64-linux-gnu/libcudnn*`
+
 
 WHICH DL FRAMEWORK DO YOU WANT TO INSTALL?
 ======
