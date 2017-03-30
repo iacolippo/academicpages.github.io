@@ -46,4 +46,4 @@ Hope you'll have a good time here!
 
 <div style="text-align: right"> Iacopo </div>
 
-<p align="center"><img src="files/nn-vs-stats.jpg", alt="deep learning joke"/></p>
+<p align="center"><img src="files/nn-vs-stats.jpg" alt="deep learning joke"/></p>
