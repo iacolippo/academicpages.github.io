@@ -11,7 +11,7 @@ tags:
 
 If you can't get your code in your favorite DL framework to run on GPUs on Azure, you're
 in the right place. What follows is the extensive guide you're looking for, result of 
-direct experience and pain.
+direct experience and pain, a lot of pain.
 
 In the following we assume the install is for an **Ubuntu Server 16.04 LTS** virtual 
 machine with a graphic card (e.g. NV6, NV12, NC6, NC12). It's pretty straightforward that
@@ -135,11 +135,11 @@ get accepted, but it's usually a quite fast process. Once logged in you have to 
 the cuDNN Software License Agreement. Now you can download **cuDNN v5.1 Library for Linux**
 (update for cuDNN v6.0 coming soon...). It's a tar file of around 147MB.
 
-As for CUDA, transfer the tar file to the remote machine:
+As for CUDA deb file, transfer the cuDNN tar file to the remote machine through scp:
 
 `scp cudnn-8.0-linux-x64-v5.1.tar [username]@[ipaddress]:/home/[username]/` 
 
-Reconnect via SSH, we're going to install! 
+Reconnect via SSH, we're going to install things! 
 
 Install
 ------
@@ -163,16 +163,16 @@ Install
     `sudo chmod a+r /usr/lib/x86_64-linux-gnu/libcudnn*`
 
 
+**Aaaaand you have installed cuDNN!**
+
 WHICH DL FRAMEWORK DO YOU WANT TO INSTALL?
 ======
 
-Tensorflow and link
+| ---------- | ----- | ----- | ------ |
+| Tensorflow | Keras | Torch | Theano |
+| ---------- | ----- | ----- | ------ |
 
-Keras and link
 
-Torch and link
-
-Theano and link
 
 TENSORFLOW INSTALL AND CHECK
 ------
@@ -185,3 +185,7 @@ TORCH INSTALL AND CHECK
 
 THEANO INSTALL AND CHECK
 ------
+
+
+#### Footnote
+This post is adapted from my [github repository](https://github.com/iacolippo/gpu-dnn-install)

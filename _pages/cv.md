@@ -35,6 +35,6 @@ Technical Skills
   
 Soft skills
 ======
-* Can work under pressure
 * Team player
 * Positive attitude
+* Work under pressure
