@@ -1,11 +1,12 @@
 ---
-title: 'Blog Post number 4'
-date: 2015-08-14
-permalink: /posts/2012/08/blog-post-4/
+title: 'How to run Tensorflow on Azure GPU instances'
+date: 2017-03-30
+permalink: /posts/2017/03/tensorflow-gpu-azure/
 tags:
-  - cool posts
-  - category1
-  - category2
+  - tensorflow
+  - azure
+  - gpu
+  - cuda
 ---
 
 This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
