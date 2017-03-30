@@ -169,22 +169,63 @@ WHICH DL FRAMEWORK DO YOU WANT TO INSTALL?
 ======
 
 |               |       |       |       |
-| ------------- | ----- | ----- | ----- |
-| <a href="#tensorflow">Tensorflow</a>    | <a href="#keras">Keras</a> | <a href="#torch">Torch</a> | <a href="#theano">Theano</a>|
+| :-------------: | :-----: | :-----: | :-----: |
+| <a href="#tensorflow">Tensorflow</a>  | <a href="#torch">Torch</a> | <a href="#theano">Theano</a>| <a href="#keras">Keras</a> |
 
+Remember, if you don't have `pip` installed, you can get it using
 
+`sudo apt-get install python-pip`
 
 <span id="tensorflow">TENSORFLOW INSTALL AND CHECK</span>
 ------
 
-<span id="keras">KERAS INSTALL AND CHECK</span>
-------
+1. You have to install another cuda library and the GPU-enabled version of tensorflow: 
+
+    ```bash
+    sudo apt-get install libcupti-dev
+    sudo pip install tensorflow-gpu
+    ```
+    
+2. check that GPU is being used running this python script:
+
+    ```python 
+    import tensorflow as tf
+
+    # Creates a graph.
+    with tf.device('/gpu:0'):a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
+        b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
+        c = tf.matmul(a, b)
+    # Creates a session with log_device_placement set to True.
+    sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+    # Runs the op.
+    print sess.run(c)
+    ```
+    
+Now everytime you run a tensorflow script, it should be executed automatically on gpu, 
+without modifying the code. To check on which device the code is being executed, run the 
+session with option `log_device_placement=True`:
+
+`sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))`
 
 <span id="torch">TORCH INSTALL AND CHECK</span>
 ------
 
 <span id="theano">THEANO INSTALL AND CHECK</span>
 ------
+
+<span id="keras">KERAS INSTALL AND CHECK</span>
+------
+
+1. Install `keras`
+
+    `sudo pip install keras`
+    
+2. If you are running on the TensorFlow backend, your code will automatically run on GPU 
+if any available GPU is detected.
+
+3. If you are running on the Theano backend, you can setup your .theanorc as in <a href="#theano">Theano
+instructions</a>.
+
 
 
 #### Footnote
