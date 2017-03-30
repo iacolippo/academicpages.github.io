@@ -11,32 +11,30 @@ redirect_from:
 
 Education
 ======
-* B.S. in Github, Github University, 2012
-* M.S. in Jekyll, Github University, 2014
-* Ph.D in Version Control Theory, Github University, 2018 (expected)
+* B.S. in Physics Engineering, Politecnico di Torino, 2015
+* M.S. in Physics of Complex Systems, Politecnico di Torino, SISSA/ICTP, Université Paris Sud, 2017 (expected)
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Jan-May 2017: Research Intern
+  * LightOn
+  * Duties included: develop POCs related to deep learning for Lighton optical device
+  * Supervisor: Igor Carron
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
   
-Skills
+Technical Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Python
+* Deep Learning frameworks
+  * Theano
+  * Keras
+  * Tensorflow
+  * Torch
+* LaTex, Markdown
+* HTML, CSS
 
-Publications
+
+[//]: # (Publications
 ======
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
@@ -53,7 +51,10 @@ Teaching
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
+)
   
-Service and leadership
+Soft skills
 ======
-* Currently signed in to 43 different slack teams
+* Can work under pressure
+* Team player
+* Positive attitude
