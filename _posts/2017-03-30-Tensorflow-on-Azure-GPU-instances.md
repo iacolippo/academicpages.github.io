@@ -168,22 +168,22 @@ Install
 WHICH DL FRAMEWORK DO YOU WANT TO INSTALL?
 ======
 
-| ---------- | ----- | ----- | ------ |
-| Tensorflow | Keras | Torch | Theano |
-| ---------- | ----- | ----- | ------ |
+|               |       |       |       |
+| ------------- | ----- | ----- | ----- |
+| <a href="#tensorflow">Tensorflow</a>    | <a href="#keras">Keras</a> | <a href="#torch">Torch</a> | <a href="#theano">Theano</a>|
 
 
 
-TENSORFLOW INSTALL AND CHECK
+<span id="tensorflow">TENSORFLOW INSTALL AND CHECK</span>
 ------
 
-KERAS INSTALL AND CHECK
+<span id="keras">KERAS INSTALL AND CHECK</span>
 ------
 
-TORCH INSTALL AND CHECK
+<span id="torch">TORCH INSTALL AND CHECK</span>
 ------
 
-THEANO INSTALL AND CHECK
+<span id="theano">THEANO INSTALL AND CHECK</span>
 ------
 
 
