@@ -4,6 +4,9 @@ date: 2017-03-30
 permalink: /posts/2017/03/Tensorflow-on-Azure-GPU-instances/
 tags:
   - tensorflow
+  - torch
+  - theano
+  - keras
   - azure
   - gpu
   - cuda
@@ -176,7 +179,7 @@ Remember, if you don't have `pip` installed, you can get it using
 
 `sudo apt-get install python-pip`
 
-<span id="tensorflow">TENSORFLOW INSTALL AND CHECK</span>
+<span id="tensorflow">TENSORFLOW INSTALL</span>
 ------
 
 1. You have to install another cuda library and the GPU-enabled version of tensorflow: 
@@ -207,7 +210,7 @@ session with option `log_device_placement=True`:
 
 `sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))`
 
-<span id="torch">TORCH INSTALL AND CHECK</span>
+<span id="torch">TORCH INSTALL</span>
 ------
 
 1. Clone the torch repository
@@ -250,7 +253,7 @@ or
 To run your model on GPU, you can write your model as usual and call the method `cuda()` on
 it. To do this, you have to `require cudnn`.
 
-    ```LUA
+    ```
     require 'cudnn'
     require 'nn'
     
@@ -261,7 +264,7 @@ it. To do this, you have to `require cudnn`.
     model:cuda()
     ```
 
-<span id="theano">THEANO INSTALL AND CHECK</span>
+<span id="theano">THEANO INSTALL</span>
 ------
 
 1. Install `theano`
@@ -287,11 +290,11 @@ allocator). The value represents the start size (either in MB or the fraction of
 memory) of the memory pool. If more memory is needed, Theano will try to obtain more, but 
 this can cause memory fragmentation. 
 
-- $0$: not enabled.
-- $0 < N <= 1$: use this fraction of the total GPU memory (clipped to .95 for driver memory).
-- $N > 1$: use this number in megabytes (MB) of memory.
+- 0: not enabled.
+- 0 < N <= 1: use this fraction of the total GPU memory (clipped to .95 for driver memory).
+- N > 1: use this number in megabytes (MB) of memory.
 
-<span id="keras">KERAS INSTALL AND CHECK</span>
+<span id="keras">KERAS INSTALL</span>
 ------
 
 1. Install `keras`
