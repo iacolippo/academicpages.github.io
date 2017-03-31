@@ -26,7 +26,7 @@ You can check that you have available NVIDIA hardware by entering in the termina
 
 The output should be something like:
 
-<p align="center"><img src="../files/output-nv6.png" alt="sample output NV6"/></p>
+<p align="center"><img src="iacolippo.github.io/files/output-nv6.png" alt="sample output NV6"/></p>
 
 CUDA INSTALL
 ======
@@ -171,7 +171,7 @@ Install
 WHICH DL FRAMEWORK DO YOU WANT TO INSTALL?
 ======
 
-|               |       |       |       |
+|                 |         |         |         |
 | :-------------: | :-----: | :-----: | :-----: |
 | <a href="#tensorflow">Tensorflow</a>  | <a href="#torch">Torch</a> | <a href="#theano">Theano</a>| <a href="#keras">Keras</a> |
 
