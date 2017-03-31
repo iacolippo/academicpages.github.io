@@ -27,7 +27,7 @@ or **machine learning**.
 
 My name is Iacopo, I'm a Master student in <a href="http://areeweb.polito.it/didattica/pcs/">
 Physics of Complex Systems</a>. I took my B.Sc. in Physics Engineering at Politecnico di Torino. 
-During my studies I always tried to learn unrelated things on the side, mostly computer 
+During my studies I always tried to learn other things on the side, mostly computer 
 science related: I taught myself HTML, CSS, a little bit of Javascript, a lot of Python 
 and a bunch of other things. In general, if it's something that runs on a computer, I'm 
 probably going to like it.
