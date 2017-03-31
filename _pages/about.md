@@ -25,13 +25,13 @@ He's <a href="https://www.linkedin.com/in/igorcarron/">Igor Carron</a> and he ha
 out if you're into **compressive sensing**, **advanced matrix factorization techniques** 
 or **machine learning**.
 
-I'm Iacopo, a Master student in <a href="http://areeweb.polito.it/didattica/pcs/">Physics 
-of Complex Systems</a>. I took my B.Sc. in Physics Engineering at Politecnico di Torino. 
+My name is Iacopo, I'm a Master student in <a href="http://areeweb.polito.it/didattica/pcs/">
+Physics of Complex Systems</a>. I took my B.Sc. in Physics Engineering at Politecnico di Torino. 
 During my studies I always tried to learn unrelated things on the side, mostly computer 
 science related: I taught myself HTML, CSS, a little bit of Javascript, a lot of Python 
 and a bunch of other things. In general, if it's something that runs on a computer, I'm 
 probably going to like it.
-Right now, I'm really interested in Deep Learning. It's difficult not to be in a time where 
+Right now, I'm really interested in Deep Learning. It's difficult not to be, in a time where 
 outstanding results are coming out everyday. This lack of theory that makes it look like
 magic is even more appealing to me. It's a *hacking things* approach, and that's what I
 like!
