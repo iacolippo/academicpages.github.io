@@ -22,11 +22,9 @@ learning, but I love to share things and discuss them with people.
 
 This blog is mainly inspired by my internship supervisor at 
 <a hef="http://www.lighton.io">LightOn</a> (check it, we use light to build the future of 
-computing!). 
-
-He's <a href="https://www.linkedin.com/in/igorcarron/">Igor Carron</a> and he has a 
-<a href="http://nuit-blanche.blogspot.fr">supercool blog</a> you should definitely check 
-out if you're into **compressive sensing**, **advanced matrix factorization techniques** 
+computing!). He's <a href="https://www.linkedin.com/in/igorcarron/">Igor Carron</a> and he 
+has a <a href="http://nuit-blanche.blogspot.fr">supercool blog</a> you should definitely 
+check out if you're into **compressive sensing**, **advanced matrix factorization techniques** 
 or **machine learning**.
 
 ABOUT ME
