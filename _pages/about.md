@@ -1,5 +1,6 @@
 ---
 permalink: /
+markdown: kramdown
 title: "About me"
 excerpt: "About me"
 author_profile: true
