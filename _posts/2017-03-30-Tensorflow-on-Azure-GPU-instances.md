@@ -28,12 +28,12 @@ The output should be something like:
 
 <p align="center"><img src="https://iacolippo.github.io/files/output-nv6.png" alt="sample output NV6"/></p>
 
-## CUDA INSTALL
+<h2> CUDA INSTALL </h2>
 
 NVIDIA® CUDA® Toolkit is *a comprehensive development environment for C and C++ 
 developers building GPU-accelerated applications*.
 
-### Download and scp the installation package
+<h3> Download and scp the installation package </h3>
 
 Download CUDA 8.0 deb package for your system frome [here](https://developer.nvidia.com/cuda-downloads).
 
@@ -73,7 +73,7 @@ remote machine and start with the install:
 
 `ssh [username]@[ipaddress]`
 
-### Install
+<h3> Install </h3>
 
 1. First, to build CUDA you need **gcc**, which is not installed by default, so:
 
@@ -122,11 +122,11 @@ variable doesn't exist, create it.
 
 **You have installed CUDA!**
 
-## CUDNN INSTALL
+<h2> CUDNN INSTALL </h2>
 
 NVIDIA cuDNN is  *a GPU-accelerated library of primitives for deep neural networks*.
 
-### Download and scp the installation package
+<h3> Download and scp the installation package </h3>
 
 Download CUDNN 5.1 for CUDA 8.0 Linux from [here](). You may have to subscribe and wait to 
 get accepted, but it's usually a quite fast process. Once logged in you have to agree to 
@@ -139,7 +139,7 @@ As for CUDA deb file, transfer the cuDNN tar file to the remote machine through 
 
 Reconnect via SSH, we're going to install things! 
 
-### Install
+<h3> Install </h3>
 
 1. extract the files from the tarball and enter in the cuda directory
 
@@ -162,7 +162,7 @@ Reconnect via SSH, we're going to install things!
 
 **Aaaaand you have installed cuDNN!**
 
-## WHICH DL FRAMEWORK DO YOU WANT TO INSTALL?
+<h2> WHICH DL FRAMEWORK DO YOU WANT TO INSTALL? </h2>
 
 |                 |         |         |         |
 | :-------------: | :-----: | :-----: | :-----: |
@@ -172,7 +172,7 @@ Remember, if you don't have `pip` installed, you can get it using
 
 `sudo apt-get install python-pip`
 
-### <span id="tensorflow">TENSORFLOW INSTALL</span>
+<h3> <span id="tensorflow">TENSORFLOW INSTALL</span> </h3>
 
 1. You have to install another cuda library and the GPU-enabled version of tensorflow: 
 
@@ -202,7 +202,7 @@ session with option `log_device_placement=True`:
 
 `sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))`
 
-### <span id="torch">TORCH INSTALL</span>
+<h3> <span id="torch">TORCH INSTALL</span> </h3>
 
 1. Clone the torch repository
 
@@ -255,7 +255,7 @@ it. To do this, you have to `require cudnn`.
     model:cuda()
     ```
 
-### <span id="theano">THEANO INSTALL</span>
+<h3> <span id="theano">THEANO INSTALL</span> </h3>
 
 1. Install `theano`
 
@@ -284,7 +284,7 @@ this can cause memory fragmentation.
 - 0 < N <= 1: use this fraction of the total GPU memory (clipped to .95 for driver memory).
 - N > 1: use this number in megabytes (MB) of memory.
 
-### <span id="keras">KERAS INSTALL</span>
+<h3> <span id="keras">KERAS INSTALL</span> </h3>
 
 1. Install `keras`
 
@@ -298,5 +298,5 @@ instructions</a>.
 
 
 
-#### Footnote
+<h4> Footnote </h4>
 This post is adapted from my [github repository](https://github.com/iacolippo/gpu-dnn-install).
