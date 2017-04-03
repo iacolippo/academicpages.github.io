@@ -45,7 +45,7 @@ like!
 I currently live in Paris, but I've lived in Brescia (my home city), Turin (my favorite city
 in Italy) and Trieste too. I will probably live elsewhere in a few months... The world is big!
 
-You can use the social links to the left to follow me on Twitter and Github, to connect
+You can use the social links on the left to follow me on Twitter and Github, to connect
 with me on Linkedin or to see my Q&A on Stackoverflow!
 
 Hope you'll have a good time here!
