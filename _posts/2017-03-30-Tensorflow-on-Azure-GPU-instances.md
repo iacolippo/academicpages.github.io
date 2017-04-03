@@ -1,5 +1,4 @@
 ---
-layout: splash
 title: 'How to run Tensorflow and other DL frameworks on Azure GPU instances'
 date: 2017-03-30
 permalink: /posts/2017/03/Tensorflow-on-Azure-GPU-instances/
@@ -297,8 +296,6 @@ if any available GPU is detected.
 
 3. If you are running on the Theano backend, you can setup your .theanorc as in <a href="#theano">Theano
 instructions</a>.
-
-
 
 <h4> Footnote </h4>
 This post is adapted from my [github repository](https://github.com/iacolippo/gpu-dnn-install).
