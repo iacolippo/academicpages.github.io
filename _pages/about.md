@@ -1,6 +1,5 @@
 ---
 permalink: /
-markdown: kramdown
 title: "About me"
 excerpt: "About me"
 author_profile: true
@@ -9,7 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-## ABOUT THIS BLOG 
+ABOUT THIS BLOG 
+---
 
 <div style="text-align: right"> 30/03/2017 </div>
 
@@ -27,7 +27,8 @@ has a <a href="http://nuit-blanche.blogspot.fr">supercool blog</a> you should de
 check out if you're into **compressive sensing**, **advanced matrix factorization techniques** 
 or **machine learning**.
 
-## ABOUT ME
+ABOUT ME
+---
 
 My name is Iacopo, I'm a Master student in <a href="http://areeweb.polito.it/didattica/pcs/">
 Physics of Complex Systems</a>. I took my B.Sc. in Physics Engineering at Politecnico di Torino. 
