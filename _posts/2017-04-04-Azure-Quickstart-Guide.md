@@ -63,7 +63,7 @@ for the deployment of the model (it takes some time usually).
 1. Go on **Resource Groups** (1), click on your **newly created one** (2) and on the **VM
 instance** (3).
 
-    <p align="center"><img src="https://dl.dropboxusercontent.com/s/zj1ddoyw07c5ftc/vm-instance.png?dl=0" alt="vm instance"/></p>
+    <p align="center"><img src="https://dl.dropboxusercontent.com/s/7rrb9oq0e4f675v/vm-instance.png?dl=0" alt="vm instance"/></p>
 
 2. Click on **Connect** to see the command to connect to the machine. Copy it in the
 terminal. You will be asked the password or the SSH key, enter it and you are in!
