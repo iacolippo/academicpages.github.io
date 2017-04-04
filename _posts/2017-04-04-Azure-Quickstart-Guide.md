@@ -11,10 +11,11 @@ tags:
   - gpu
 ---
 
-Hi everyone! In this post I will explain how to create a VM instance on the cloud using
-from the Microsoft Azure Dashboard.
+Hi everyone! In this post I will explain how to <a href="#create">create a VM instance</a>, 
+how to <a href="#connect">connect</a> to it and how to <a href="#send">send files</a> to 
+and from it, using <a href="https://azure.microsoft.com/">Microsoft Azure</a>.
 
-<h2>Create a Virtual Machine</h2>
+<h2 id="create">Create a Virtual Machine</h2>
 
 1. Click on **+** (New)
 
@@ -57,7 +58,7 @@ Click on your choice and on **Select**
 7. Check that **Validation is passed** and confirm the creation by clicking **Ok** and wait
 for the deployment of the model (it takes some time usually).
     
-<h2>Connect to the Virtual Machine</h2>
+<h2 id="connect">Connect to the Virtual Machine</h2>
 
 1. Go on **Resource Groups** (1), click on your **newly created one** (2) and on the **VM
 instance** (3).
@@ -67,15 +68,15 @@ instance** (3).
 2. Click on **Connect** to see the command to connect to the machine. Copy it in the
 terminal. You will be asked the password or the SSH key, enter it and you are in!
 
-    <p align="center"><img src="https://dl.dropboxusercontent.com/s/j59qwhzvf1hl30l/ssh-command.png?dl=0" alt="ssh command"/></p>
+    **Remark**: you may be asked to add the IP as an authenticated address, type **yes** to confirm.
 
-    Remark: you may be asked to add the IP to as an authenticated address, type **yes** to confirm.
+    <p align="center"><img src="https://dl.dropboxusercontent.com/s/j59qwhzvf1hl30l/ssh-command.png?dl=0" alt="ssh command"/></p>
 
     You will be prompted to something like this:
     
     <p align="center"><img src="https://dl.dropboxusercontent.com/s/zpe7v3vbi177ts2/ssh-prompt.png?dl=0" alt="ssh prompt"/></p>
 
-<h2>Send files to and from the Virtual Machine</h2>
+<h2 id="send">Send files to and from the Virtual Machine</h2>
 
 <h3> Send files to the VM</h3>
 
@@ -112,7 +113,7 @@ local machine.
 
 
 
-#### Footnote TODO: ADD LINKEDIN LINK
-This post is slightly changed from a guide written by my colleague 
+#### Footnote
+<sub>This post is slightly changed from a guide written by my colleague 
 <a href="https://www.linkedin.com/in/clément-gastaud-ab2a3298/">C. Gastaud</a>
-at <a href="http://www.lighton.io">LightOn</a>.
+at <a href="http://www.lighton.io">LightOn</a>.</sub>
