@@ -12,9 +12,9 @@ tags:
   - cuda
 ---
 
-If you can't get your code in your favorite DL framework to run on GPUs on Azure, you're
-in the right place. What follows is the extensive guide you're looking for, result of 
-direct experience and pain, a lot of pain.
+If you have <a href="#">created your VM instance on Azure</a> and you can't get your code  
+in your favorite DL framework to run on GPU, you're in the right place. What follows is the
+extensive guide you're looking for, result of direct experience and pain.
 
 In the following we assume the install is for an **Ubuntu Server 16.04 LTS** virtual 
 machine with a graphic card (e.g. NV6, NV12, NC6, NC12). It's pretty straightforward that
@@ -26,7 +26,7 @@ You can check that you have available NVIDIA hardware by entering in the termina
 
 The output should be something like:
 
-<p align="center"><img src="https://iacolippo.github.io/files/tensorflow-on-azure-img/output-nv6.png" alt="sample output NV6"/></p>
+<p align="center"><img src="https://photos.google.com/share/AF1QipOm5dgAu-0AWMD4MjDirWnjmp9rGKxmgRgeIf6qMB5zjGB-jejELMMV9fwlKZn6zw/photo/AF1QipNmP-Ay2mmqwS2mu9-5e2tl0plPZRxDQkPiF2_K?key=VWg1ZXRTRVg5a3dmWXFwS1Jzc3FOdHJJb3J0WTBR&hl=it" alt="sample output NV6"/></p>
 
 <h2> CUDA INSTALL </h2>
 
@@ -297,4 +297,5 @@ if any available GPU is detected.
 instructions</a>.
 
 <h4> Footnote </h4>
-This post is adapted from my [github repository](https://github.com/iacolippo/gpu-dnn-install).
+This post is adapted from my [github repository](https://github.com/iacolippo/gpu-dnn-install). 
+Any question, advice, suggestion for this post? Feel free to comment!
