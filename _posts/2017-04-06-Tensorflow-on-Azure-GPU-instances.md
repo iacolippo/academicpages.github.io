@@ -26,7 +26,7 @@ You can check that you have available NVIDIA hardware by entering in the termina
 
 The output should be something like:
 
-<p align="center"><img src="https://iacolippo.github.io/files/output-nv6.png" alt="sample output NV6"/></p>
+<p align="center"><img src="https://iacolippo.github.io/files/tensorflow-on-azure-img/output-nv6.png" alt="sample output NV6"/></p>
 
 <h2> CUDA INSTALL </h2>
 
