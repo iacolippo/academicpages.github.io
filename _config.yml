@@ -11,7 +11,7 @@ title                    : "iacolippo's blog"
 title_separator          : "-"
 name                     : &name "Iacopo Poli"
 description              : &description "Research Intern at LightOn and Master student in Physics of Complex Systems"
-url                      : https://iacolippo.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://iacolippo.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "iacolippo.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -147,7 +147,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 
 # Conversion
-markdown: kramdown
+markdown: maruku #kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
