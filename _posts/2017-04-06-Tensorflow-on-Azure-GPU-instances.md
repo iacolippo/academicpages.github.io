@@ -26,7 +26,7 @@ You can check that you have available NVIDIA hardware by entering in the termina
 
 The output should be something like:
 
-<p align="center"><img src="https://www.dropbox.com/s/2py9ht5mnvzv1fm/output-nv6.png?dl=0" alt="sample output NV6"/></p>
+<p align="center"><img src="dl.dropboxusercontent.com/s/2py9ht5mnvzv1fm/output-nv6.png?dl=0" alt="sample output NV6"/></p>
 
 <h2> CUDA INSTALL </h2>
 
