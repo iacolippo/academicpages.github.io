@@ -1,7 +1,7 @@
 ---
 title: 'Azure Quickstart Guide'
-date: 2017-03-30
-permalink: /posts/2017/03/Azure Quickstart Guide/
+date: 2017-04-04
+permalink: /posts/2017/04/azure-quickstart-guide/
 tags:
   - azure
   - vm
