@@ -1,7 +1,7 @@
 ---
 title: 'How to run Tensorflow and other DL frameworks on Azure GPU instances'
-date: 2017-03-30
-permalink: /posts/2017/03/Tensorflow-on-Azure-GPU-instances/
+date: 2017-04-06
+permalink: /posts/2017/04/Tensorflow-on-Azure-GPU-instances/
 tags:
   - tensorflow
   - torch
@@ -12,13 +12,12 @@ tags:
   - cuda
 ---
 
-If you have <a href="#">created your VM instance on Azure</a> and you can't get your code  
-in your favorite DL framework to run on GPU, you're in the right place. What follows is the
-extensive guide you're looking for, result of direct experience and pain.
+Hi everyone! I'm going to explain how to install <a href="#cuda">CUDA</a>, <a href="#cudnn">
+CuDNN</a> and different <a href="#frameworks">deep learning frameworks</a> on 
+<a href="https://iacolippo.github.io/posts/2017/04/azure-quickstart-guide/">Azure VM instances</a>.
 
 In the following we assume the install is for an **Ubuntu Server 16.04 LTS** virtual 
-machine with a graphic card (e.g. NV6, NV12, NC6, NC12). It's pretty straightforward that
-you can't run code on a GPU, if you don't have it =)
+machine with a graphic card (e.g. NV6, NV12, NC6, NC12).
 
 You can check that you have available NVIDIA hardware by entering in the terminal:
 
@@ -28,7 +27,7 @@ The output should be something like:
 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/2py9ht5mnvzv1fm/output-nv6.png?dl=0" alt="sample output NV6"/></p>
 
-<h2> CUDA INSTALL </h2>
+<h2 id="cuda"> CUDA INSTALL </h2>
 
 NVIDIA® CUDA® Toolkit is *a comprehensive development environment for C and C++ 
 developers building GPU-accelerated applications*.
@@ -53,17 +52,9 @@ The correct choices are:
 For the **installer type**, I recommend **deb(network)**. It's fast to download and fast 
 to scp to the remote machine. The *deb(local)* version is 1.8GB, vs 2.6K of the network one.
 
-Now you can transfer this file from your local machine to the remote machine. Navigate
-to the directory where the file is (using `cd`).
-To transfer files to the remote, we will use `scp`, a command which works like this:
-
-`scp <local-path-to-the-file-to-transfer> <remote-machine-address>`
-
-The Azure portal gives you an SSH command to connect to the machine, which is something like:
-
-`ssh [username]@[ipaddress]`
-
-Take the second part, append `:/home/lighton/` and enter in the terminal:
+Now you can <a href="https://iacolippo.github.io/posts/2017/04/azure-quickstart-guide/">transfer 
+this file from your local machine to the remote machine</a>. Navigate to the directory where 
+the file is (using `cd`).
 
 `scp cuda-repo-ubuntu1604_8.0.61-1_amd64.deb [username]@[ipaddress]:/home/[username]/`
 
@@ -93,15 +84,17 @@ remote machine and start with the install:
     sudo apt-get install cuda
     ```
 4. Add `/usr/local/cuda-8.0/bin` to `PATH` environment variable in `.profile` in home 
-directory using `nano` or `vim`:
+directory using `nano`, `vim` or another command line editor of your choice:
 
     `nano .profile`
 
-    Append `:/usr/local/cuda-8.0/bin` to the content of the path variable, like from
+    Append `:/usr/local/cuda-8.0/bin` to the content of the path variable.
+    
+    If for example the `PATH` variable by default is
 
     `PATH="$HOME/bin:$HOME/.local/bin:$PATH"`
 
-    to
+    modify it in:
 
     `PATH="$HOME/bin:$HOME/.local/bin:$PATH:/usr/local/cuda-8.0/bin"`
 
@@ -122,16 +115,17 @@ variable doesn't exist, create it.
 
 **You have installed CUDA!**
 
-<h2> CUDNN INSTALL </h2>
+<h2 id="cudnn"> CUDNN INSTALL </h2>
 
 NVIDIA cuDNN is  *a GPU-accelerated library of primitives for deep neural networks*.
 
 <h3> Download and scp the installation package </h3>
 
-Download CUDNN 5.1 for CUDA 8.0 Linux from [here](). You may have to subscribe and wait to 
-get accepted, but it's usually a quite fast process. Once logged in you have to agree to 
-the cuDNN Software License Agreement. Now you can download **cuDNN v5.1 Library for Linux**
-(update for cuDNN v6.0 coming soon...). It's a tar file of around 147MB.
+Download CUDNN 5.1 for CUDA 8.0 Linux from [here](https://developer.nvidia.com/cudnn). You 
+may have to subscribe and wait to get accepted, but it's usually a quite fast process. Once 
+logged in you have to agree to the cuDNN Software License Agreement. Now you can download 
+**cuDNN v5.1 Library for Linux** (update for cuDNN v6.0 coming soon...). It's a tar file of 
+around 147MB.
 
 As for CUDA deb file, transfer the cuDNN tar file to the remote machine through scp:
 
@@ -160,15 +154,15 @@ Reconnect via SSH, we're going to install things!
     `sudo chmod a+r /usr/lib/x86_64-linux-gnu/libcudnn*`
 
 
-**Aaaaand you have installed cuDNN!**
+**And you have installed cuDNN!**
 
-<h2> WHICH DL FRAMEWORK DO YOU WANT TO INSTALL? </h2>
+<h2 id="frameworks"> WHICH DL FRAMEWORK DO YOU WANT TO INSTALL? </h2>
 
 |                 |         |         |         |
 | :-------------: | :-----: | :-----: | :-----: |
 | <a href="#tensorflow">Tensorflow</a>  | <a href="#torch">Torch</a> | <a href="#theano">Theano</a>| <a href="#keras">Keras</a> |
 
-Remember, if you don't have `pip` installed, you can get it using
+Remember that if you don't have `pip` installed, you can get it using.
 
 `sudo apt-get install python-pip`
 
@@ -208,19 +202,13 @@ session with option `log_device_placement=True`:
 
     `git clone https://github.com/torch/distro.git ~/torch --recursive`
     
-2. Install dependencies, you may need to run the second line with the prefix `sudo -s`:
-
-    ```bash
-    cd ~/torch; 
-    bash install-deps;
-    ```
-    
-    or
+2. Install dependencies, you need to run the second line with the prefix `sudo -s`:
     
     ```bash
     cd ~/torch; 
     sudo -s bash install-deps;
     ```
+    
 3. Install:
 
     `./install.sh`
@@ -297,5 +285,5 @@ if any available GPU is detected.
 instructions</a>.
 
 <h4> Footnote </h4>
-This post is adapted from my [github repository](https://github.com/iacolippo/gpu-dnn-install). 
-Any question, advice, suggestion for this post? Feel free to comment!
+<sub>This post is adapted from my [github repository](https://github.com/iacolippo/gpu-dnn-install). 
+Any question, advice, suggestion for this post? Feel free to comment!</sub>
