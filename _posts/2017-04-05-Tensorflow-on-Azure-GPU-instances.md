@@ -75,7 +75,7 @@ remote machine and start with the install:
 
     -  `sudo apt-get install linux-headers-$(uname -r)` checks you've the correct kernel headers.
         This passage is sometimes needed, sometimes useless. Misteries of computer science.
-    - `sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb` opens the package
+    - `sudo dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb` opens the package
     - `sudo apt-get update` updates everything
     - `sudo apt-get install cuda` installs the package.
     
