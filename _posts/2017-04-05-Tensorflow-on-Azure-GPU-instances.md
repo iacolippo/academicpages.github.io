@@ -1,6 +1,6 @@
 ---
 title: 'How to run Tensorflow and other DL frameworks on Azure GPU instances'
-date: 2017-04-06
+date: 2017-04-05
 permalink: /posts/2017/04/Tensorflow-on-Azure-GPU-instances/
 tags:
   - tensorflow
