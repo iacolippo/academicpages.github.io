@@ -67,7 +67,7 @@ remote machine and start with the install:
 
 <h3> Install </h3>
 
-1. <a href="https://github.com/iacolippo/gpu-dnn-install/blob/master/installing-cuda.sh" target="_blank">Run this script</a>.
+1. Run <a href="https://github.com/iacolippo/gpu-dnn-install/blob/master/installing-cuda.sh" target="_blank">this script</a>.
     
     Explaining the script:
 
@@ -131,7 +131,7 @@ Reconnect via SSH, we're going to install cuDNN!
 
 <h3> Install </h3>
 
-1. <a href="https://github.com/iacolippo/gpu-dnn-install/blob/master/installing-cudnn.sh" target="_blank">Run this script</a>.
+1. Run <a href="https://github.com/iacolippo/gpu-dnn-install/blob/master/installing-cudnn.sh" target="_blank">this script</a>.
     
     Explaining the script:
 
