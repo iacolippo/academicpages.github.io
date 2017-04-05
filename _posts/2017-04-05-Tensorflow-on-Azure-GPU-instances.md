@@ -10,13 +10,14 @@ tags:
   - azure
   - gpu
   - cuda
+  - cudnn
 ---
 
 Hi everyone! I'm going to explain how to install <a href="#cuda">CUDA</a>, <a href="#cudnn">
-CuDNN</a> and different <a href="#frameworks">deep learning frameworks</a> on 
+cuDNN</a> and different <a href="#frameworks">deep learning frameworks</a> on 
 <a href="https://iacolippo.github.io/posts/2017/04/azure-quickstart-guide/">Azure VM instances</a>.
 
-In the following we assume the install is for an **Ubuntu Server 16.04 LTS** virtual 
+In the following I assume the install is for an **Ubuntu Server 16.04 LTS** virtual 
 machine with a graphic card (e.g. NV6, NV12, NC6, NC12).
 
 You can check that you have available NVIDIA hardware by entering in the terminal:
@@ -66,24 +67,19 @@ remote machine and start with the install:
 
 <h3> Install </h3>
 
-1. First, to build CUDA you need **gcc**, which is not installed by default, so:
+1. [Run this script](https://github.com/iacolippo/gpu-dnn-install/blob/master/installing-cuda.sh)
+    
+    Explaining the script:
 
-    `sudo apt install gcc`
+    - `sudo apt install gcc` installs **gcc**
 
-2. Just to be sure we have the correct kernel headers:
-
-    `sudo apt-get install linux-headers-$(uname -r)`
-
-    This passage is sometimes needed, sometimes useless. Misteries of computer science.
-
-3. Install the package
-
-    ```bash
-    sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
-    sudo apt-get update
-    sudo apt-get install cuda
-    ```
-4. Add `/usr/local/cuda-8.0/bin` to `PATH` environment variable in `.profile` in home 
+    -  `sudo apt-get install linux-headers-$(uname -r)` checks you've the correct kernel headers.
+        This passage is sometimes needed, sometimes useless. Misteries of computer science.
+    - `sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb` opens the package
+    - `sudo apt-get update` updates everything
+    - `sudo apt-get install cuda` installs the package.
+    
+2. Add `/usr/local/cuda-8.0/bin` to `PATH` environment variable in `.profile` in home 
 directory using `nano`, `vim` or another command line editor of your choice:
 
     `nano .profile`
@@ -98,18 +94,18 @@ directory using `nano`, `vim` or another command line editor of your choice:
 
     `PATH="$HOME/bin:$HOME/.local/bin:$PATH:/usr/local/cuda-8.0/bin"`
 
-5. Add `/usr/local/cuda-8.0/lib64` to `LD_LIBRARY_PATH` variable in `.profile`. If such 
+3. Add `/usr/local/cuda-8.0/lib64` to `LD_LIBRARY_PATH` variable in `.profile`. If such 
 variable doesn't exist, create it.
 
     `LD_LIBRARY_PATH="/usr/local/cuda-8.0/lib64"`
 
     To save in `nano`: Ctrl+X, Y, Enter.
 
-6. Activate the changes using:
+4. Activate the changes using:
 
     `source .profile`
 
-7. To make them effective, reboot the machine:
+5. To make them effective, reboot the machine:
 
     `sudo reboot`
 
@@ -121,7 +117,7 @@ NVIDIA cuDNN is  *a GPU-accelerated library of primitives for deep neural networ
 
 <h3> Download and scp the installation package </h3>
 
-Download CUDNN 5.1 for CUDA 8.0 Linux from [here](https://developer.nvidia.com/cudnn). You 
+Download cuDNN 5.1 for CUDA 8.0 Linux from [here](https://developer.nvidia.com/cudnn). You 
 may have to subscribe and wait to get accepted, but it's usually a quite fast process. Once 
 logged in you have to agree to the cuDNN Software License Agreement. Now you can download 
 **cuDNN v5.1 Library for Linux** (update for cuDNN v6.0 coming soon...). It's a tar file of 
@@ -131,28 +127,19 @@ As for CUDA deb file, transfer the cuDNN tar file to the remote machine through 
 
 `scp cudnn-8.0-linux-x64-v5.1.tar [username]@[ipaddress]:/home/[username]/` 
 
-Reconnect via SSH, we're going to install things! 
+Reconnect via SSH, we're going to install cuDNN! 
 
 <h3> Install </h3>
 
-1. extract the files from the tarball and enter in the cuda directory
-
-    ```bash
-    tar -xvf cudnn-8.0-linux-x64-v5.1.tar
-    cd cuda
-    ```
+1. [Run this script](https://github.com/iacolippo/gpu-dnn-install/blob/master/installing-cudnn.sh).
     
-2. create symbolic links
+    Explaining the script:
 
-    ```bash
-    sudo cp -P include/cudnn.h /usr/include/
-    sudo cp -P lib64/libcudnn* /usr/lib/x86_64-linux-gnu/
-    ```
-    
-3. set permissions
-
-    `sudo chmod a+r /usr/lib/x86_64-linux-gnu/libcudnn*`
-
+    - `tar -xvf cudnn-8.0-linux-x64-v5.1.tar` extract files from the tarball
+    - `cd cuda` enters in `cuda` directory.
+    - `sudo cp -P include/cudnn.h /usr/include/` creates symbolic link
+    - `sudo cp -P lib64/libcudnn* /usr/lib/x86_64-linux-gnu/` creates another symbolic link
+    - `sudo chmod a+r /usr/lib/x86_64-linux-gnu/libcudnn*` sets permissions.
 
 **And you have installed cuDNN!**
 
