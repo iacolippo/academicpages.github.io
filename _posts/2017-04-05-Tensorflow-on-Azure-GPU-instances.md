@@ -15,7 +15,7 @@ tags:
 
 Hi everyone! I'm going to explain how to install <a href="#cuda">CUDA</a>, <a href="#cudnn">
 cuDNN</a> and different <a href="#frameworks">deep learning frameworks</a> on 
-<a href="https://iacolippo.github.io/posts/2017/04/azure-quickstart-guide/">Azure VM instances</a>.
+<a href="https://iacolippo.github.io/posts/2017/04/azure-quickstart-guide/" target="_blank">Azure VM instances</a>.
 
 In the following I assume the install is for an **Ubuntu Server 16.04 LTS** virtual 
 machine with a graphic card (e.g. NV6, NV12, NC6, NC12).
@@ -35,7 +35,7 @@ developers building GPU-accelerated applications*.
 
 <h3> Download and scp the installation package </h3>
 
-Download CUDA 8.0 deb package for your system frome [here](https://developer.nvidia.com/cuda-downloads).
+Download CUDA 8.0 deb package for your system frome <a href="https://developer.nvidia.com/cuda-downloads" target="_blank">here</a>.
 
 You have to select:
 - operating system
@@ -53,7 +53,7 @@ The correct choices are:
 For the **installer type**, I recommend **deb(network)**. It's fast to download and fast 
 to scp to the remote machine. The *deb(local)* version is 1.8GB, vs 2.6K of the network one.
 
-Now you can <a href="https://iacolippo.github.io/posts/2017/04/azure-quickstart-guide/">transfer 
+Now you can <a href="https://iacolippo.github.io/posts/2017/04/azure-quickstart-guide/" target="_blank">transfer 
 this file from your local machine to the remote machine</a>. Navigate to the directory where 
 the file is (using `cd`).
 
@@ -67,7 +67,7 @@ remote machine and start with the install:
 
 <h3> Install </h3>
 
-1. [Run this script](https://github.com/iacolippo/gpu-dnn-install/blob/master/installing-cuda.sh)
+1. <a href="https://github.com/iacolippo/gpu-dnn-install/blob/master/installing-cuda.sh" target="_blank">Run this script</a>.
     
     Explaining the script:
 
@@ -117,7 +117,7 @@ NVIDIA cuDNN is  *a GPU-accelerated library of primitives for deep neural networ
 
 <h3> Download and scp the installation package </h3>
 
-Download cuDNN 5.1 for CUDA 8.0 Linux from [here](https://developer.nvidia.com/cudnn). You 
+Download cuDNN 5.1 for CUDA 8.0 Linux from <a href="https://developer.nvidia.com/cudnn" target="_blank">here</a>. You 
 may have to subscribe and wait to get accepted, but it's usually a quite fast process. Once 
 logged in you have to agree to the cuDNN Software License Agreement. Now you can download 
 **cuDNN v5.1 Library for Linux** (update for cuDNN v6.0 coming soon...). It's a tar file of 
@@ -131,7 +131,7 @@ Reconnect via SSH, we're going to install cuDNN!
 
 <h3> Install </h3>
 
-1. [Run this script](https://github.com/iacolippo/gpu-dnn-install/blob/master/installing-cudnn.sh).
+1. <a href="https://github.com/iacolippo/gpu-dnn-install/blob/master/installing-cudnn.sh" target="_blank">Run this script</a>.
     
     Explaining the script:
 
