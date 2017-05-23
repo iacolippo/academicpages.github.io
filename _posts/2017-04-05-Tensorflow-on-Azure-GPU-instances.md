@@ -86,18 +86,14 @@ directory using `nano`, `vim` or another command line editor of your choice:
 
     Append `:/usr/local/cuda-8.0/bin` to the content of the path variable.
     
-    If for example the `PATH` variable by default is
+    To do this, add the following line at the end of the text file:
 
-    `PATH="$HOME/bin:$HOME/.local/bin:$PATH"`
-
-    modify it in:
-
-    `PATH="$HOME/bin:$HOME/.local/bin:$PATH:/usr/local/cuda-8.0/bin"`
+    `export PATH="$PATH:/usr/local/cuda-8.0/bin"`
 
 3. Add `/usr/local/cuda-8.0/lib64` to `LD_LIBRARY_PATH` variable in `.profile`. If such 
 variable doesn't exist, create it.
 
-    `LD_LIBRARY_PATH="/usr/local/cuda-8.0/lib64"`
+    `export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-8.0/lib64"`
 
     To save in `nano`: Ctrl+X, Y, Enter.
 
