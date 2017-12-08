@@ -12,29 +12,26 @@ redirect_from:
 Education
 ======
 * B.S. in Physics Engineering, Politecnico di Torino, 2015
-* M.S. in Physics of Complex Systems, Politecnico di Torino, SISSA/ICTP, Université Paris Sud, 2017 (expected)
+* M.S. in Physics of Complex Systems, Politecnico di Torino, SISSA/ICTP, Université Paris Sud, 2017
+  110/110 cum laude
 
 Work experience
 ======
 * Jan-May 2017: Research Intern
   * LightOn
-  * Duties included: develop POCs related to deep learning for Lighton optical device
-  * Supervisor: Igor Carron
+* Aug 2017 - present: R&D Machine Learning Engineer
+  * LightOn
 
   
 Technical Skills
 ======
 * Python
 * Deep Learning frameworks
-  * Theano
-  * Keras
-  * Tensorflow
   * Torch
-* LaTex, Markdown
+  * PyTorch
+  * Keras
+* Other frameworks
+  * scikit-learn
+* Experience in building Python docs: LaTex, Markdown, ReStructuredText, sphinx
 * HTML, CSS
-  
-Soft skills
-======
-* Team player
-* Positive attitude
-* Work under pressure
+
