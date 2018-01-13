@@ -55,7 +55,7 @@ Some days ago I stumbled upon [this paper](https://homes.cs.washington.edu/~pedr
 
 9. **Learn many models, not just one**
 
-   	Combining many variations of many learners gives better results.
+   Combining many variations of many learners gives better results.
 
 10. **Simplicity does not imply accuracy**
 
