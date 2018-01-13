@@ -31,11 +31,10 @@ Some days ago I stumbled upon [this paper](https://homes.cs.washington.edu/~pedr
    
 4. **Overfitting has many faces**
 
-   Generalization error = consistently learning the same wrong thing  +  tendency to learn noise over the real signal.
-
- These two types of error are respectively called **bias** and **variance**.
+   Generalization error = consistently learning the same wrong thing  +  tendency to learn noise over the real signal.  
+   These two types of error are respectively called **bias** and **variance**.
    
-   <p align="center"><img src="../images/bias-variance.png"></p>
+   <p align="center"><img src= "{{ "/images/bias-variance.png" | prepend: site.baseurl }}"></p>
 
 5. **Intuition fails in high dimension**
 
