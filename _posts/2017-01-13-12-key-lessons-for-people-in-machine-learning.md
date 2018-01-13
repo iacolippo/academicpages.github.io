@@ -57,7 +57,7 @@ Some days ago I stumbled upon [this paper](https://homes.cs.washington.edu/~pedr
 
 10. **Simplicity does not imply accuracy**
 
-   Simplicity of a model is a virtue by itself, but it's not connected to accuracy. 
+   Simplicity of a model is a virtue by itself, but it's not connected to accuracy.
 
 11. **Representable does not imply learnable**
 
